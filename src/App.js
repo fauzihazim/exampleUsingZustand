@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+// import Button from './count/component/Button';
+// Pages
+import Index from "./pages/index/Index"
+import Count from "./pages/count/component/Count";
+import Object from "./pages/addingObject/component/Object";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Button count={count} setCount={setCount}/>
+    <>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Index />} />
+        <Route exact path="/count" element={<Count />} />
+        <Route exact path="/object" element={<Object />} />
+      </Routes>
+    </Router>
+      {/* <button onClick={() => setCount( count + 1)}>Count is {count}</button> */}
+      {/* <Count /> */}
+      <br />
+      {/* {count} */}
+    </>
   );
 }
 
